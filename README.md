@@ -1,1 +1,0 @@
-# gp06drap.github.io
