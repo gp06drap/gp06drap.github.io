@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css">
+    <!--<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  </head>
+  <body>
+    <table id="myTable">
+      <caption>Personal Information</caption>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>DOB</th>
+          <th>SSN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Joe</td>
+          <td>Smith</td>
+          <td>July 1, 2000</td>
+          <td>022-12-0000</td>
+        </tr>
+        <tr>
+          <td>Chris</td>
+          <td>Topac</td>
+          <td>January 10, 1970</td>
+          <td>033-52-2123</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Zi</td>
+          <td>September 31, 1973</td>
+          <td>123-45-6789</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+    <script>
+      let table = new DataTable('#myTable');
+    </script>
+  </body>
+</html>
