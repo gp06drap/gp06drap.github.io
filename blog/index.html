@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Greg's Blog</title>
+		<link rel="icon" href="https://www.siena.edu/siena_favicon.png">
+		<style>
+			@font-face {
+				font-family: nasalization;
+				src: url('../nasalization.woff');
+			}
+			* {
+				font-family: nasalization;
+			}
+			body{
+				padding:5rem;
+				background-color: gray;
+				background-repeat: no-repeat;
+				background-size: cover;
+				color: white;
+			}
+			h1{
+				text-align:center;
+				color:Red;
+			}
+			nav{
+				width: 100%;
+				height: 3rem;
+				position: sticky;
+				overflow: hidden;
+				background-color: white;
+				text-decoration: none;
+				border-radius: 1.5rem;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				top: 0;
+			}
+			nav a{
+				color:black;
+				font-size:18px;
+				padding:.5rem 1.5rem;
+			}
+			nav a:hover{
+				color: gold;
+				animation-name:shadow-pop-tr;
+				animation-duration: 1s;
+				
+			}
+			#left{
+				float:left;
+			}
+			#right{
+				float:right;
+			}
+            img{
+                padding: 1rem;
+            }
+            img:active{
+                width:100%;
+            }
+			@keyframes textColor{
+				0%   {color: green;}
+  				50%  {color: yellow;}
+  				100%  {color: green;}
+			}
+			.shadow-pop-tr {
+				-webkit-animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        	animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+			}
+			@-webkit-keyframes shadow-pop-tr {
+  			0% {
+    			-webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+            	box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    			-webkit-transform: translateX(0) translateY(0);
+            	transform: translateX(0) translateY(0);
+  			}
+  			100% {
+    			-webkit-box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+    	        box-shadow: 1px -1px gold, 2px -2px gold, 3px -3px gold, 4px -4px gold, 5px -5px gold, 6px -6px gold, 7px -7px gold, 8px -8px gold;
+    			-webkit-transform: translateX(-8px) translateY(8px);
+        	    transform: translateX(-8px) translateY(8px);
+  			}
+			}
+			@keyframes shadow-pop-tr {
+			0% {
+			    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+	            box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+			    -webkit-transform: translateX(0) translateY(0);
+	            transform: translateX(0) translateY(0);
+			}
+			100% {
+			    -webkit-box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+	            box-shadow: 1px -1px gold, 2px -2px gold, 3px -3px gold, 4px -4px gold, 5px -5px gold, 6px -6px gold, 7px -7px gold, 8px -8px gold;
+			    -webkit-transform: translateX(-8px) translateY(8px);
+	            transform: translateX(-8px) translateY(8px);
+			}
+			}
+		</style>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Blog</h1>
+		<nav>
+			<a href="../">Home</a><a href="../about">About</a><a href="">Blog</a><a href="../pictures">Pictures</a>
+		</nav>
+        <article>
+            <h1>Siena Basketball</h1>
+            <h2>February 5, 2026</h2>
+        </article>
+	</body>
+</html>
