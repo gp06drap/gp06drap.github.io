@@ -1,0 +1,11 @@
+/*console.log("Hello World");
+alert("Hello World");
+
+const buttonA=document.querySelector("#button_A");
+const headingA=document.getElementById("heading_A");
+
+buttonA.addEventListener('click', ()=>{
+    const name=prompt("What is your name?");
+    alert('Hello '+name+', nice to see you!');
+    headingA.textContent=`Welcome ${name}`;
+});*/
