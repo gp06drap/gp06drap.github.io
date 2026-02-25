@@ -24,18 +24,31 @@
         </style>
     </head>
     <body>
-        <h1>Number Guessing Game</h1>
-        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
-        <label for="guess">Enter a guess</label>
-        <input type="number" min="1" max="100" required id="guess"></input>
-        <button type="submit" >Submit Guess</button>
-        <div id="answer"></div>
+        <div style="background-color: lightgoldenrodyellow;">
+            <h1>Number Guessing Game</h1>
+            <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+            <label for="guess">Enter a guess</label>
+            <input type="number" min="1" max="100" required id="guess"></input>
+            <button type="submit" >Submit Guess</button>
+            <div id="answer"><br><br><br><br><br></div>
+        </div>
+        <br><br><br>
         <button id="button_A">Press me</button>
         <h3 id="heading_A"></h3>
         <button id="button_B">Press me</button>
         <div id="greeting"></div>
         <input id="textBox" type="text"/>
         <div id="output"></div>
+        <p id="message">Original Text</p>
+        <button id="changeText">Click Me</button>
+        <br><br>
+        <div id="box" style="width:100px; height:100px; background-color: gray;"></div>
+        <input type="text" id="textInput" placeholder="How are you so awsome?">
+        <ul class="favCoffeeList cute">
+            <li class="item">Cappuccino</li>
+            <li class="item">Macchiato</li>
+            <li class="item">Latte</li>
+        </ul>
         <script src="script.js" difer></script>
     </body>
 </html>

@@ -3,11 +3,12 @@ const userInput=document.querySelector("#guess");
 const response=document.querySelector("#answer")
 let guesses;
 const goal=parseInt(Math.random()*100)+1;
+userInput.placeholder=`Ex: ${goal}`;
 
 submitB.addEventListener("click", function(){
     let value=userInput.value;
     let side;
-    if (guesses===null){
+    if (guesses==null){
         guesses=value;
     }else{
         guesses=guesses+" "+value;
@@ -46,3 +47,26 @@ buttonB.addEventListener('click', ()=>{
     const name=prompt("What is your name?");
     greeting.textContent=`Hello! ${name}, nice to see you!`;
 });
+
+const changeT=document.querySelector("#changeText");
+const pTag=document.querySelector("#message");
+
+changeT.addEventListener("click", ()=>{
+    pTag.textContent=`Hello JavaScript!`;
+});
+
+const jBox=document.querySelector("#box");
+
+jBox.addEventListener("click",(e)=>{
+    let r=parseInt(Math.random()*256);
+    let g=parseInt(Math.random()*256);
+    let b=parseInt(Math.random()*256);
+    e.target.style.backgroundColor=`rgb(${r},${g},${b})`;
+});
+
+const textI=document.querySelector("#textInput");
+
+textI.addEventListener("keydown", function(event){
+    console.log(event.key);
+});
+
