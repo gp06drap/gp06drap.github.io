@@ -1,1 +1,41 @@
+<html>
+    <head>
+        <title>Lab 4a</title>
+        <style>
+            html {
+                font-family: sans-serif;
+            }
 
+            body {
+                width: 50%;
+                max-width: 800px;
+                min-width: 480px;
+                margin: 0 auto;
+            }
+
+            .form input[type="number"] {
+                width: 200px;
+            }
+
+            .lastResult {
+                color: white;
+                padding: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Number Guessing Game</h1>
+        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+        <label for="guess">Enter a guess</label>
+        <input type="number" min="1" max="100" required id="guess"></input>
+        <button type="submit" >Submit Guess</button>
+        <div id="answer"></div>
+        <button id="button_A">Press me</button>
+        <h3 id="heading_A"></h3>
+        <button id="button_B">Press me</button>
+        <div id="greeting"></div>
+        <input id="textBox" type="text"/>
+        <div id="output"></div>
+        <script src="script.js" difer></script>
+    </body>
+</html>
