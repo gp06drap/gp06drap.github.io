@@ -70,3 +70,19 @@ textI.addEventListener("keydown", function(event){
     console.log(event.key);
 });
 
+let listItems=document.querySelectorAll(".item");
+listItems.forEach(lItem => console.log(lItem.textContent));
+
+document.querySelector("#content").textContent=`New Content`;
+
+let ranGenButton=document.querySelector("#randomButton");
+
+ranGenButton.addEventListener("click", function(){
+    document.querySelector("#randomOutput").textContent=parseInt(Math.random()*10)+1;
+});
+
+document.getElementById("addItems").addEventListener("click", function(){
+    const newItem=document.createElement("li");
+    newItem.textContent="New Item";
+    document.getElementById("itemList").appendChild(newItem);
+});
