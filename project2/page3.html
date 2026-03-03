@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Quest Begins</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="container">
+            <h1>Pack Your Bag</h1>
+            <p>Select the supplies you wish to take on your quest. Choose wisely, as you can only carry a limited amount.</p>
+            <fieldset>
+                <legend>Supplies</legend>
+                <form id="suppliesList" type="get">
+                    <section class="container">
+                        <input type="checkbox" id="food" name="supplies" value="food">
+                        <label for="food"><b>Food:</b> Essentail for energy.</label>
+                    </section>
+                    <br>
+                    <section class="container">
+                        <input type="checkbox" id="water" name="supplies" value="water">
+                        <label for="water"><b>Water:</b> Hydration is key!</label>
+                    </section>
+                    <br>
+                    <section class="container">
+                        <input type="checkbox" id="potions" name="supplies" value="potions">
+                        <label for="potions"><b>Magic Potions:</b> For health and magical energy.</label>
+                    </section>
+                    <br>
+                    <section class="container">
+                        <input type="checkbox" id="maps" name="supplies" value="maps">
+                        <label for="maps"><b>Maps:</b> Don't get lost in the wilderness!</label>
+                    </section>
+                    <br>
+                    <section class="container">
+                        <input type="checkbox" id="sword" name="supplies" value="sword">
+                        <label for="sword"><b>Sword:</b> Fend off those pesky foes!</label>
+                    </section>
+                    <button type="submit" onclick="action='page4.html'">Continue</button>
+                </form>
+            </fieldset>
+        </section>
+    </body>
+</html>
