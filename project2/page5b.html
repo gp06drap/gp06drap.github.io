@@ -57,9 +57,9 @@
                     }
                 }
                 function checkSequence(){
-                    if(userSequence===correctSequence){
-                        alert("Good Job!");
-                        //location.href="page6.html";
+                    if(userSequence.join()==correctSequence.join()){
+                        alert("Congratulations, you got the correct order!");
+                        location.href="page6.html";
                     }else{
                         reset();
                     }
