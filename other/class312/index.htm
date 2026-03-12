@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>JS Flexbox</title>
+        <style>
+            .parent {
+                display: flex;
+                flex-wrap: wrap;
+                width: 600px;
+                gap: 4px;
+            }
+            .child {
+                width: 80px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <main></main>
+        <script>
+            const parent=document.createElement('div');
+            parent.className="parent";
+            for (let i=0;i<101;i++){
+                const child=document.createElement('div');
+                child.className="child";
+                child.textContent=i;
+                if(isPrime(i)){
+                    child.style.backgroundColor="red";
+                }else if(i%2==0){
+                    child.style.backgroundColor="green";
+                }else{
+                    child.style.backgroundColor="yellow";
+                }
+                parent.appendChild(child);
+            }
+            document.querySelector('main').appendChild(parent);
+            
+            function isPrime(num){
+                if(num==1||num==0){
+                    return false;
+                }else if(num==2||num==3){
+                    return true;
+                }
+                for(let i=2; i<Math.sqrt(num)+Math.min(num/2,2);i++){
+                    if(num%i==0){
+                        return false;
+                    }
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>
