@@ -1,0 +1,1293 @@
+/* CSS for the METAL Highway Data Examiner*/
+
+#map {
+    position: absolute;
+    top: 0px;
+    bottom:0px;
+    width: 100%;
+    right: 0px;
+    overflow:hidden;
+    filter: blur(6px);
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    z-index: 2; 
+}
+
+.leaflet-control-scale-line {
+    border-radius: 0;
+}
+
+#avStatusPanel {
+    margin: 0;
+    z-index: 11000;
+    position: absolute;
+    overflow: scroll;
+    width: 400px;
+    opacity: 1.0;
+    display: none;
+
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+#avStatusPanel::-webkit-scrollbar, #discoveredAVCPEntry::-webkit-scrollbar, #datatable::-webkit-scrollbar
+{
+    display: none;  /*Removes scrollbar in Chrome, Safari, and Opera*/
+} 
+
+#avStatusPanel, #discoveredAVCPEntry, #datatable
+{
+    -ms-overflow-style: none;  /*Removes scrollbar in Internet Explorer and Edge*/
+    scrollbar-width: none;  /*removes scrollbar in Firefox*/
+}
+
+#avStatusTable {
+    border: none;
+    width: 100%;
+    overflow: scroll;
+    background-color: rgb(190, 235, 252);
+    border-collapse: separate;
+    border-spacing: 10px;
+    max-width: 400px;
+ 
+}
+
+#avStatusTable th
+{
+    border: none;
+    font-size: 24px;
+    color: rgb(39, 78, 93);
+}
+
+.codeRow
+{
+    border-spacing: 0;
+}
+
+#avStatusTable td:not(.codeRow *, .pseudocode) {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 7px 7px 7px 13px;
+    font-weight: 500;
+    /* box-shadow: 5px 5px 3px black; */
+}
+
+#avStatusTable td#foundAVCPEntry
+{
+    padding: 7px;
+}
+
+#avStatusTable td#discoveredAVCPEntry table tbody tr td
+{
+    padding: 7px;
+}
+
+#avStatusTable td#discoveredAVCPEntry table tbody tr td#dotdotdot
+{
+    padding: 0;
+}
+
+#avStatusTable td#pseudo
+{
+    border: none;
+    margin: 0;
+    padding-top: 0;
+    padding-left: 7px;
+    border-spacing: 0;
+    background-color: rgb(30, 179, 238);
+    border: 2px solid black;
+}
+
+
+#avStatusTable #algorithmStatus
+{
+    padding: 10px;
+    width: 200px;
+    display: block;
+    color: rgb(39, 78, 93);
+    min-height: 40px;
+    box-shadow: none;
+    border: none;
+    
+}
+
+#algorithmStatus span
+{
+    width: 380px;
+    display: inline-block;
+    
+    
+}
+
+#discoveredAVCPEntry
+{
+    max-width: 300px;
+    overflow: scroll;
+    
+}
+
+#discoveredAVCPEntry span
+{
+    text-align: right;
+}
+
+#discoveredAVCPEntry table
+{
+    
+    border-collapse: separate;
+    border-spacing: 5px;
+
+}
+
+#discoveredAVCPEntry table tbody tr td
+{
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 11px;
+    border: 2px solid black;
+    
+}
+
+#discoveredAVCPEntry table tbody tr td#dotdotdot
+{
+    background-color: rgb(255, 130, 0);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    border: none;
+    
+}
+
+#foundAVCPEntry
+{
+    text-align: center;
+}
+
+#foundAVCPEntry table.pathTable
+{
+    /*background-color: rgb(113, 88, 255);*/
+    border-collapse: separate;
+    border-spacing: 6px;
+    border: none;
+    max-width: 380px;
+    margin: auto;
+}
+
+#foundAVCPEntry table.pathTable td
+{
+    background-color: white;
+    font-size: 12px;
+    padding: 3px 3px 3px 5px;
+    color: black;
+}
+
+#foundAVCPEntry table.pathTable th
+{
+    font-size: 14px;
+    color: white;
+}
+
+
+
+
+
+#map * {
+    cursor:crosshair;
+    
+    
+}
+
+html
+{
+    background-color: rgb(47, 47, 47);
+}
+
+#selected {
+    position: relative;
+    overflow: scroll;
+    display: inline-block;
+    max-width: 50%;
+    max-height: 85%;
+    width:auto;
+    height:auto;
+    opacity: .95;  /* also forces stacking order */
+}
+
+#pointbox {
+    visibility: hidden;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+}
+
+#options {
+    visibility: hidden;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+}
+
+#showHideMenu {
+    position: fixed;
+    right: 10px;
+    opacity: .75;  /* also forces stacking order */
+}
+
+#AlgorithmVisualization {
+    visibility: hidden;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+}
+
+
+
+#pseudoTable {
+    position: absolute;
+    padding: 5px;
+    bottom: 150px;
+    overflow-y: scroll;
+    max-width: 33%;
+    opacity: .95;
+}
+
+#graphList {
+    width:150px;
+}
+
+table.dataTable tbody td {
+    padding:0px;
+}
+
+#menuIcon {
+    padding: 0px;
+    margin: 0px;
+    top: 1px;
+    position: fixed;
+    display: inline-block;
+    border: none;
+    color: white;
+}
+
+#menuIcon:hover {
+    color: lightgrey;
+}
+
+table.pseudocode {
+    font-size: 9pt;
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid black;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    background-color: white;
+    color: black;
+   
+}
+
+
+
+
+#START td.pseudocode
+{
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+td.pseudocode {
+    border: none;
+    border-collapse: collapse;
+    padding-top: 0;
+}
+
+tr.pseudocode {
+    border: none;
+    border-collapse: collapse;
+    padding-top: 0;
+}
+/*tr.codeRow td
+{
+    color:rgb(129, 91, 216);
+    border: none;
+}*/
+
+
+.highlight {
+    background-color: yellow;
+}
+.for1{}
+.for2{}
+.for3{}
+.if1{}
+.if2{}
+
+.box {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid;
+}
+
+#contentArea_legend{
+    background-color: white;
+}
+
+#boxContainer{
+    padding-left: 30px;
+}
+
+
+
+#loadDataTable {
+    border: 1px solid black;	
+}
+
+#searchBox {
+    width: 365px;
+}
+
+
+
+
+
+#selected {
+    display: none;
+}
+
+
+
+
+
+/* centering and zindex together, based on example from 
+https://stackoverflow.com/questions/19343331/how-do-i-center-an-absolutely-positioned-element
+*/
+
+
+
+.data-title:hover:after{
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+    z-index: inherit;
+}
+.data-title:after{
+        
+    background-color: #00FF00;
+    color: #111;
+    font-size: 20px;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.6em;
+    left: 100%;
+    white-space: wrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    overflow: hidden;
+}
+.data-title{
+    font-size: 11px;
+    background-color: white;
+    color:rgb(47, 47, 47);
+    white-space: wrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 50;
+    border: 1px solid rgb(47, 47, 47);
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+#instructions{
+    width: 40%; 
+    position: absolute; 
+    left: 45%; 
+    top: 100px; 
+    z-index: 9999; 
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: separate;
+    max-height: 50%;
+    display: inline-block;
+    overflow-y: scroll;
+}
+
+#CBPWhole {
+    z-index: 9999;
+    top: 100px;
+    left: 191px;
+    max-width: 300px;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#CBPConditions {
+    position: relative;
+    width: 10%;
+    float: right;
+    min-width: 25px;
+}
+
+#CBPConditions {
+    width: 100%;
+    position: relative;
+    float: left;
+    color: white;
+    font-size: 10pt;
+    font-weight: 500;
+    margin-bottom: 2px;
+    
+}
+
+#CBPConditions select
+{
+    border: none;
+    border-radius: 10px;
+    padding: 4px;
+    margin-top: 1px;
+}
+
+#CBPOnOff
+{
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+#instructionsHeader{
+    text-align: center;
+    width: 100%;
+}
+
+.tabs{
+    text-align: center;
+    border: 1px solid black;
+    width: 20%;
+    display: inline-block;
+}
+
+#instructionsBody{
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 50%;
+    display: block;
+}
+
+#instructionsBody img{
+    max-width: 100%;
+    padding: 5px;
+
+}
+
+button, #uploadLabel
+{
+    background-color: rgb(30, 179, 238);
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    border-radius: 10px;
+    border-width: 0px;
+    padding: 5px;
+    font-weight: 500;
+    margin: 10px;
+    color: white;
+    box-shadow: 10px 10px 20px black;
+    text-shadow: 1.15px 1.15px 2px black;
+
+  
+
+    
+    
+    
+}
+
+.opt:hover, #uploadLabel:hover
+{
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid white;
+}
+
+#back:hover, #cancel:hover
+{
+    border: 2px solid white;
+    margin: 8px;
+    margin-right: 500px;
+    margin-bottom: 28px;
+    
+}
+
+#back2:hover
+{
+    border: 2px solid white;
+    margin: 8px;
+    margin-right: 500px;
+    margin-bottom: 0;
+    
+}
+
+#next:hover
+{
+    border: 2px solid white;
+    margin-top: 23px;
+    margin-bottom: 0;
+    
+}
+
+#loadDataPanel #selects #getlist:hover
+{
+    border: 2px solid white;
+    margin-top: 28px;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    margin-left: 8px;
+    
+}
+
+
+#fileToLoad{
+    visibility: hidden;
+    content: 'Select some files';
+    display: inline-block;
+    background-color: aqua;
+    
+  }
+
+
+
+
+div
+{
+    border-radius: 10px;
+    margin: auto;
+    /*text-align: center;*/
+}
+#loadDataPanel
+{
+    top: 50px;
+    max-width: 40%;
+    
+    display: block;
+    background-color: rgb(47, 47, 47); 
+    z-index: 14000;
+    position: relative;
+    padding: 30px;
+    margin: auto;
+    max-width: 450px;   
+    text-align: center;
+    box-shadow: 5px 5px 20px black;
+    
+}
+
+
+
+#loadDataPanel p
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+#intro
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    
+}
+
+h3
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+.descr a
+{
+    text-decoration: none;
+    color:rgb(30, 179, 238);
+}
+
+#back, #cancel
+{
+    float: left;
+    margin-bottom: 30px;
+    margin-right: 500px;
+}
+
+#back2
+{
+    float: left;
+    margin-bottom: 2px;
+    margin-right: 500px;
+}
+
+#cancel
+{
+    background-color: rgb(255, 68, 78);
+}
+#loadDataPanel #overview
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+#loadDataPanel #instr2
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    color: white;
+    display: block;
+    text-align: center;
+    font-style: italic;
+}
+#loadDataPanel #or
+{
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+#algorithmSelectionPanel {
+
+    text-align: center; 
+    margin: 0;
+    padding: 0;
+    
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    z-index: 12000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(39, 78, 93)
+    
+}
+
+#algorithmSelectionPanelTable {
+    margin: 0;
+    top: 67px;
+    position: absolute;
+    left: 12px;
+    overflow: scroll;
+    
+    width: 400px;
+    border: none;
+    /*left: 5px;*/
+    z-index: 10000;
+    background-color: rgb(236, 207, 255); 
+    color: rgb(95, 55, 126);
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    
+}
+
+#algorithmSelectionPanelTable th
+{
+    font-size: 24px;
+    border: none;
+    
+}
+
+#algorithmSelectionPanelTable td
+{
+    font-size: 16px;
+    border: none;
+    text-align: center
+    
+}
+
+#algorithmSelectionPanelTable td select
+{
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+}
+
+#algorithmSelectionPanelTable td input
+{
+    border-radius: 10px;
+    color: rgb(95, 55, 126);
+    background-color: white;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+    position: relative;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+#algorithmSelectionPanelTable td input#algOptionsDone
+{
+    margin-top: 0;
+    padding: 7px;
+    font-size: 22px;
+}
+
+#algOptionsDone:hover
+{
+    border: 3px solid rgb(95, 55, 126);
+    margin-top: -3px!important;
+    margin-bottom: 0;
+
+
+}
+#copyURL:hover
+{
+    border: 3px solid rgb(95, 55, 126);
+}
+
+#algorithmSelectionPanelTable td select#traversalDiscipline
+{
+    margin-top: 7px;
+}
+
+p#algDescription
+{
+    font-size: 14px;
+    margin: 15px;
+    font-style: italic;
+}
+
+
+h4
+{
+    color: white;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+
+}
+
+#loadDataPanel #selects p
+{
+    margin-top: 0;
+    padding: 0;
+    display: inline;
+    
+
+}
+
+#loadDataPanel div#selects 
+{
+   
+    text-align: center;
+    
+    
+
+}
+
+#loadDataPanel #selects select
+{
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 0;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#loadDataPanel #selects select#graphList
+{
+
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+
+#loadDataPanel #selects #minVertices, #loadDataPanel #selects #maxVertices
+{
+    border-radius: 10px;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 0;
+    
+
+}
+
+#loadDataPanel #selects #getlist
+{
+    background-color: rgb(30, 179, 238);
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    border-radius: 10px;
+    border-width: 0px;
+    padding: 5px;
+    font-weight: 500;
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 6px;
+    text-align: left;
+    margin-left: 0;
+    text-shadow: 1.15px 1.15px 2px black;
+    box-shadow: 10px 10px 20px black;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: none;
+    
+    
+}
+#loadDataPanel #selects
+{
+    text-align: left;
+    
+}
+
+#loadDataPanel #selects #vert
+{
+    margin-bottom: 0;
+    
+}
+#loadDataPanel #selects #to
+{
+    margin-top: 0;
+    font-size: 16px;
+    
+}
+input
+{
+    margin-top: 0;
+}
+
+
+
+#vex
+{
+    margin: auto;
+    position: relative;
+    text-align: left;
+    display: inline-block;
+}
+
+#algorithmSelectionPanelTable #algorithmOptions
+{
+    
+    text-align: center;
+    margin: auto;
+    
+}
+
+#datatable {
+    display: none;
+    position: absolute;
+    overflow: scroll;
+    top: 67px;
+    
+    opacity: 1;
+    z-index: 1; 
+    /* above leaflet tiles and overlays, below map tile selector */
+    
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: rgb(255, 210, 246);
+    margin: 0;
+
+    max-width: 300px;
+    /*border: 2px solid white;*/
+    
+}
+
+#datatable table
+{
+    border: none;
+
+    
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+#datatable td, #datatable th
+{
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+    text-align: center;
+
+}
+
+#datatable td
+{
+    border: 2px solid black;
+}
+
+#datatable th.dtHeader
+{
+    padding: 0!important;
+    color:rgb(89, 41, 79);
+    font-size: 14px;
+    
+}
+
+
+#topControlPanel {
+    background-color: rgb(47, 47, 47);
+    padding: 0;
+    position: relative;
+    z-index: 11000;
+    display: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#topControlPanelTable
+{
+    position: relative;
+    margin: 0;
+}
+
+#topControlPanel #topControlPanelTable select
+{
+    border-radius: 10px;
+    padding: 5px;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    
+}
+
+
+#topControlPanelTable td
+{
+    color: white;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+#topControlPanel p
+{
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+#check
+{
+    text-align: left;
+}
+
+#startPauseButton
+{
+    background-color: rgb(30, 179, 238);
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    border-radius: 10px;
+    border-width: 0px;
+    padding: 5px;
+    font-weight: 500;
+    color: white;
+}
+
+#topControlPanelAV1 #startPauseButton
+{
+    margin-top: 2px;
+}
+#resetButton
+{
+    background-color: rgb(255, 68, 78);
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    border-radius: 10px;
+    border-width: 0px;
+    padding: 5px;
+    font-weight: 500;
+    color: white;
+    margin-left: 15px;
+    box-shadow: 10px 10px 20px black;
+    text-shadow: 1.15px 1.15px 2px black;
+    
+}
+
+div.menubar > *:not(#title)
+{
+    
+    float: right;
+    
+}
+
+div.menubar 
+{
+    background-color: rgb(47, 47, 47);
+    z-index: 0;
+    min-height: 50px;
+    border-radius: 0;
+    border: none;
+}
+#info span
+{
+    
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: white;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+#newGraph
+{
+    font-size: 12px;
+    margin: 5px 10px;
+    text-shadow: 0.8px 0.8px 1.5px black;
+    width: 94px;
+}
+
+#newAlg
+{
+    font-size: 12px;
+    margin: 0 10px;
+    background-color: rgb(129, 91, 216);
+    text-shadow: 0.8px 0.8px 1.5px black;
+    width: 94px;
+}
+
+#currentAlgorithm
+{
+    display: none;
+}
+
+#startPauseButton, #resetButton
+{
+    margin: 0px 15px;
+    margin-left: 0;
+    
+}
+
+#topControlPanelTable #topControlPanelAV3 
+{
+    text-align: left;
+}
+
+#topControlPanelTable td select
+{
+    margin-top: 3px;
+    margin-right: 11px;
+}
+
+#topControlPanelTable #topControlPanelAV3
+{
+    margin-top: 3px;
+    
+}
+
+#info
+{
+    text-align: left;
+    display: none;
+}
+.menubar {
+    font-size: 10pt;
+    font-style: normal;
+   font-family: sans-serif;
+    text-align: center;
+    position: relative;
+   padding-right: 8px;
+    padding-bottom: 2px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    height: auto;
+    background-color: rgb(47, 47, 47);
+    color: #ffffff;
+    border: none;
+}
+
+
+p#pscode 
+{
+    border: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    height: 20px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+   
+}
+
+#title p#metalTitle
+{
+    float: left;
+    max-width: 200px;
+    color: white;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    margin: 10px;
+    display: none;
+    
+
+}
+
+#title
+{
+    text-align: left;
+}
+
+input#searchBox
+{
+    
+    background-color: white;
+  
+    border: none;
+    
+}
+input.typeahead.tt-hint
+{
+    display: none;
+}
+.twitter-typeahead
+{
+    background-color: white;
+    border-radius: 10px;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin-top: 4px;
+
+}
+
+div.tt-menu.tt-open
+{
+    width: 96.75%;
+    text-align: left;
+}
+
+#next
+{
+    margin-top: 25px;
+    margin-bottom: 2px;
+}
+#noGraphFound
+{
+    color: rgb(255, 148, 153);
+}
+
+#loadDataPanel p#loading
+{
+    color: white;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+
+input.typeahead.tt-input
+{
+    padding-left: 2px;
+}
+
+#sizeError
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 5px;
+    background-color: rgb(47, 47, 47);
+    z-index: 1000000;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+#graphInfo
+{
+    z-index: 100000;
+    font-size: 15px;
+    position: absolute;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid rgb(47, 47, 47);
+    display: none;
+}
+
+#wp, #cn
+{
+    color:rgb(89, 41, 79);
+    font-size: 24px;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+#undiscoveredAVCPEntry
+{
+    background-color: white!important;
+    color: black!important;
+}
+
+#advancedTitle
+{
+    margin-top: 70px;
+}
+
+@media (max-width: 885px)
+{
+    #metalTitle
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 675px)
+{
+    #sizeError
+    {
+        display: block;
+    }
+
+    body *:not(#sizeError)
+    {
+        display: none!important;
+    }
+}
